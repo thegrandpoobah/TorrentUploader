@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cleverscape.UTorrentClient.WebClient.UTorrentWebClient">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AOJYYpCCECKEAABAiAAAQCAAQWIQAAaAgAAAAAABQAA=</HashCode>
+      <FileName>UTorrentWebClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.TorrentFile">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAEgEAAAAQAAAACAIAAAAEAAAACBAI=</HashCode>
+      <FileName>ObjectModel\Files.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.TorrentFileCollection" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAQAAAAAABAQCAAAAAQAACAAAAAAAAIAAAAQIAA=</HashCode>
+      <FileName>ObjectModel\Files.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.SettingBase">
+    <Position X="15.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAABAAAAgAEgAAAAAQBAAAAAIAAAQAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.SettingBase&lt;T&gt;">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.SettingInteger">
+    <Position X="15.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.SettingString">
+    <Position X="17.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.SettingBoolean">
+    <Position X="19.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.SettingsCollection" BaseTypeListCollapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAAAAQAABAQCAAAAAQAAAABAAAAAQAAAAAQIAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.TorrentCollection" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IGIgAAAAAAAEABAQCAAABAQAAAAAAAAAAQAAAABQIBA=</HashCode>
+      <FileName>ObjectModel\TorrentCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.TorrentLabel">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAEgCAgAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\TorrentLabels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.TorrentLabelCollection" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAgAAAAAAAAABAQCQAAIAQBAAAAIAAAAAAAAAAQIAA=</HashCode>
+      <FileName>ObjectModel\TorrentLabels.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.Torrent">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BixwxJCkECMASAAEoFAJFJQGAoKri4AC4CAoABYmNKA=</HashCode>
+      <FileName>ObjectModel\Torrents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.Tracker">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgEAAAAAAAAAAAKACCAAAAEAAAAA=</HashCode>
+      <FileName>ObjectModel\Trackers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cleverscape.UTorrentClient.WebClient.TrackerCollection" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGIAAEQAAAAACFAUCQAABAQCAAAgAAAACAAAAABQIAA=</HashCode>
+      <FileName>ObjectModel\Trackers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="Cleverscape.UTorrentClient.WebClient.FilePriority">
+    <Position X="10.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAACAkAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Files.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cleverscape.UTorrentClient.WebClient.SettingType">
+    <Position X="14" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAQAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cleverscape.UTorrentClient.WebClient.TorrentStatus">
+    <Position X="7" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAEAAEAAQCAAAABAAAAQAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Torrents.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Cleverscape.UTorrentClient.WebClient.OptionValue">
+    <Position X="7" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAASAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectModel\Torrents.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
