@@ -16,7 +16,7 @@ namespace TorrentUploader
             if (Environment.GetCommandLineArgs().Length != 2)
             {
                 MessageBox.Show(
-                    "Must supply path to a torrent file.",
+                    "Must supply path to a torrent file on this system or a magnet link.",
                     "TorrentUploader",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information,

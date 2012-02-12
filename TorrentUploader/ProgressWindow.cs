@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Cleverscape.UTorrentClient.WebClient;
 using System.Diagnostics;
 using System.IO;
-//blah
+using System.Windows.Forms;
+using Cleverscape.UTorrentClient.WebClient;
+
 namespace TorrentUploader
 {
     public partial class ProgressWindow : Form
@@ -57,7 +52,14 @@ namespace TorrentUploader
                     return;
                 }
 
-                webClient.AddTorrent(Environment.GetCommandLineArgs()[1]);
+                if (this.IsMagnetLink)
+                {
+                    webClient.AddTorrentFromUrl(this.TorrentURI);
+                }
+                else
+                {
+                    webClient.AddTorrent(this.TorrentURI);
+                }
 
                 if (backgroundWorker.CancellationPending)
                 {
@@ -77,7 +79,8 @@ namespace TorrentUploader
 
         private void webClient_TorrentAdded(object sender, TorrentEventArgs e)
         {
-            lock (storedTorrentLock) {
+            lock (storedTorrentLock)
+            {
                 this.storedTorrent = e.Torrent;
             }
         }
@@ -95,7 +98,10 @@ namespace TorrentUploader
             this.workingPanel.Visible = false;
             this.donePanel.Visible = true;
 
-            File.Delete(Environment.GetCommandLineArgs()[1]);
+            if (!this.IsMagnetLink)
+            {
+                File.Delete(this.TorrentURI);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -115,5 +121,25 @@ namespace TorrentUploader
         {
             Process.Start(this.serverUrl.Text);
         }
+
+        #region < Properties >
+
+        private string TorrentURI
+        {
+            get
+            {
+                return Environment.GetCommandLineArgs()[1];
+            }
+        }
+
+        private bool IsMagnetLink
+        {
+            get
+            {
+                return this.TorrentURI.ToLowerInvariant().StartsWith("magnet:");
+            }
+        }
+
+        #endregion 
     }
 }
