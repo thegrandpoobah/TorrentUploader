@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerAddress" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://samson:9999</Value>
+      <Value Profile="(Default)">{{SERVERADDRESS}}</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)">{{USERNAME}}</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">anything</Value>
+      <Value Profile="(Default)">{{PASSWORD}}</Value>
     </Setting>
   </Settings>
 </SettingsFile>
