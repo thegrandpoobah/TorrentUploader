@@ -21,14 +21,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E02A62CFC10245A2A64FAA24F9E382D4"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_AAFB793B9D4B252B8EB6B0D06A932678"
+        "OwnerKey" = "8:_033BB36E3B914F9399F9F01CD0315369"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F82AB5AF3B86322C98BCABBFD691C42D"
+        "MsmKey" = "8:_BD943E7EDF4677C3765D54999F02AC3A"
         "OwnerKey" = "8:_033BB36E3B914F9399F9F01CD0315369"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E02A62CFC10245A2A64FAA24F9E382D4"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,7 +52,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F82AB5AF3B86322C98BCABBFD691C42D"
+        "OwnerKey" = "8:_BD943E7EDF4677C3765D54999F02AC3A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AAFB793B9D4B252B8EB6B0D06A932678"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -74,6 +86,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -155,20 +180,51 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F82AB5AF3B86322C98BCABBFD691C42D"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AAFB793B9D4B252B8EB6B0D06A932678"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Cleverscape.UTorrentClient.WebClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F82AB5AF3B86322C98BCABBFD691C42D"
+                    "_AAFB793B9D4B252B8EB6B0D06A932678"
                     {
                     "Name" = "8:Cleverscape.UTorrentClient.WebClient.dll"
                     "Attributes" = "3:512"
                     }
                 }
             "SourcePath" = "8:Cleverscape.UTorrentClient.WebClient.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_EF72F16729E543C8ABF5182099250A1F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BD943E7EDF4677C3765D54999F02AC3A"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:TorrentUploader.Native, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BD943E7EDF4677C3765D54999F02AC3A"
+                    {
+                    "Name" = "8:TorrentUploader.Native.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:TorrentUploader.Native.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EF72F16729E543C8ABF5182099250A1F"
@@ -265,15 +321,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TorrentUploader"
-        "ProductCode" = "8:{F30499B1-0DA0-476D-A529-10D13EB853CC}"
-        "PackageCode" = "8:{77E59E52-1113-4582-A317-D0C4254755D5}"
+        "ProductCode" = "8:{6F313C40-6120-4832-AFFC-11715BC75F27}"
+        "PackageCode" = "8:{4F5AE66A-739F-433F-B02D-7C5BD5B2B085}"
         "UpgradeCode" = "8:{CEF2A2CE-890C-4BD0-89FE-4FD0AFA0609B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.0"
+        "ProductVersion" = "8:1.1.1"
         "Manufacturer" = "8:Sahab Yazdani"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1123,7 +1179,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_033BB36E3B914F9399F9F01CD0315369"
             {
-            "SourcePath" = "8:..\\TorrentUploader\\obj\\x86\\Release\\TorrentUploader.exe"
+            "SourcePath" = "8:..\\TorrentUploader\\obj\\x86\\Debug\\TorrentUploader.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EF72F16729E543C8ABF5182099250A1F"
@@ -1151,7 +1207,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E02A62CFC10245A2A64FAA24F9E382D4"
             {
-            "SourcePath" = "8:..\\TorrentUploader.CustomActions\\obj\\x86\\Release\\TorrentUploader.CustomActions.dll"
+            "SourcePath" = "8:..\\TorrentUploader.CustomActions\\obj\\x86\\Debug\\TorrentUploader.CustomActions.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EF72F16729E543C8ABF5182099250A1F"

@@ -9,6 +9,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorrentUploader.CustomActions", "TorrentUploader.CustomActions\TorrentUploader.CustomActions.csproj", "{9444D06B-04A7-4B58-9B7F-8407EDECBC60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorrentUploader.Native", "TorrentUploader.Native\TorrentUploader.Native.csproj", "{671C95CA-54F4-4C46-9E19-C3D93E12CED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,16 @@ Global
 		{9444D06B-04A7-4B58-9B7F-8407EDECBC60}.Release|Mixed Platforms.Build.0 = Release|x86
 		{9444D06B-04A7-4B58-9B7F-8407EDECBC60}.Release|x86.ActiveCfg = Release|x86
 		{9444D06B-04A7-4B58-9B7F-8407EDECBC60}.Release|x86.Build.0 = Release|x86
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{671C95CA-54F4-4C46-9E19-C3D93E12CED5}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

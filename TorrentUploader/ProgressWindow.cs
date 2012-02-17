@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using Cleverscape.UTorrentClient.WebClient;
+using TorrentUploader.Native;
+using System.Runtime.InteropServices;
 
 namespace TorrentUploader
 {
@@ -32,6 +34,19 @@ namespace TorrentUploader
 
             this.backgroundWorker.RunWorkerAsync();
         }
+
+        private void Flash() {
+            FLASHWINFO fw = new FLASHWINFO();
+
+            fw.cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(FLASHWINFO)));
+            fw.hwnd = this.Handle;
+            fw.dwFlags = (int)FlashWindowExFlags.FLASHW_TRAY;
+            fw.uCount = UInt32.MaxValue;
+
+            Methods.FlashWindowEx(ref fw);
+        }
+
+        #region < Event Handlers >
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -95,6 +110,11 @@ namespace TorrentUploader
                 this.doneLabel.Text = "Torrent Upload was cancelled.";
             }
 
+            if (Properties.Settings.Default.FlashWindowOnComplete)
+            {
+                this.Flash();
+            }
+
             this.workingPanel.Visible = false;
             this.donePanel.Visible = true;
 
@@ -121,6 +141,8 @@ namespace TorrentUploader
         {
             Process.Start(this.serverUrl.Text);
         }
+
+        #endregion < Event Handlers >
 
         #region < Properties >
 

@@ -1,0 +1,6 @@
+bin
+obj
+Debug
+Release
+glob:TorrentUploader.suo
+glob:TorrentUploader/TorrentUploader.csproj.user

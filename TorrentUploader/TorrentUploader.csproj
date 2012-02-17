@@ -84,6 +84,10 @@
       <Project>{208452E4-97DD-4FA0-A071-18B3219B4EDE}</Project>
       <Name>Cleverscape.UTorrentClient.WebClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TorrentUploader.Native\TorrentUploader.Native.csproj">
+      <Project>{671C95CA-54F4-4C46-9E19-C3D93E12CED5}</Project>
+      <Name>TorrentUploader.Native</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\TheFatController.ico" />
