@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.ServiceModel;
+using System.ServiceModel.Security;
 using System.Windows.Forms;
 using Cleverscape.UTorrentClient.WebClient;
 using TorrentUploader.Native;
@@ -35,7 +37,8 @@ namespace TorrentUploader
             this.backgroundWorker.RunWorkerAsync();
         }
 
-        private void Flash() {
+        private void Flash()
+        {
             FLASHWINFO fw = new FLASHWINFO();
 
             fw.cbSize = Convert.ToUInt32(Marshal.SizeOf(typeof(FLASHWINFO)));
@@ -55,12 +58,6 @@ namespace TorrentUploader
                 Properties.Settings.Default.Password))
             {
                 webClient.TorrentAdded += new TorrentEventHandler(webClient_TorrentAdded);
-                if (backgroundWorker.CancellationPending)
-                {
-                    e.Cancel = true;
-                    return;
-                }
-
                 if (backgroundWorker.CancellationPending)
                 {
                     e.Cancel = true;
@@ -105,9 +102,28 @@ namespace TorrentUploader
             this.progressBar.Style = ProgressBarStyle.Blocks;
             this.progressBar.Value = this.progressBar.Maximum;
 
-            if (e.Cancelled)
+            if (e.Error != null)
             {
-                this.doneLabel.Text = "Torrent Upload was cancelled.";
+                if (e.Error is UriFormatException)
+                {
+                    this.doneLabel.Text = string.Format("{0}\n{1}", Strings.ErrorHeader, Strings.IncorrectServerAddressFormat);
+                }
+                else if (e.Error is MessageSecurityException)
+                {
+                    this.doneLabel.Text = string.Format("{0}\n{1}", Strings.ErrorHeader, Strings.IncorrectUserNameOrPassword);
+                }
+                else if (e.Error is EndpointNotFoundException)
+                {
+                    this.doneLabel.Text = string.Format("{0}\n{1}", Strings.ErrorHeader, Strings.NoResponse);
+                }
+                else
+                {
+                    this.doneLabel.Text = e.Error.ToString();
+                }
+            }
+            else if (e.Cancelled)
+            {
+                this.doneLabel.Text = Strings.UploadCancelled;
             }
 
             if (Properties.Settings.Default.FlashWindowOnComplete)
@@ -134,7 +150,7 @@ namespace TorrentUploader
             this.backgroundWorker.CancelAsync();
 
             this.btnCancel.Enabled = false;
-            this.workingLabel.Text = "Cancelling torrent upload. Please wait...";
+            this.workingLabel.Text = Strings.UploadCancelling;
         }
 
         private void serverUrl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -162,6 +178,6 @@ namespace TorrentUploader
             }
         }
 
-        #endregion 
+        #endregion
     }
 }
