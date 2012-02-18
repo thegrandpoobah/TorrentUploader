@@ -120,11 +120,17 @@
   <data name="ErrorHeader" xml:space="preserve">
     <value>The following error occured uploading the torrent:</value>
   </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>The torrent file was not found.</value>
+  </data>
   <data name="IncorrectServerAddressFormat" xml:space="preserve">
     <value>The Server Address is in the incorrect format.</value>
   </data>
   <data name="IncorrectUserNameOrPassword" xml:space="preserve">
     <value>The user name or password is incorrect.</value>
+  </data>
+  <data name="InsufficientArguments" xml:space="preserve">
+    <value>Must supply path to a torrent file on this system or a magnet link URL.</value>
   </data>
   <data name="NoResponse" xml:space="preserve">
     <value>There was no response from the server (perhaps the address is incorrect?).</value>

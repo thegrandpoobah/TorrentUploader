@@ -70,6 +70,15 @@ namespace TorrentUploader {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The torrent file was not found..
+        /// </summary>
+        internal static string FileNotFound {
+            get {
+                return ResourceManager.GetString("FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Server Address is in the incorrect format..
         /// </summary>
         internal static string IncorrectServerAddressFormat {
@@ -84,6 +93,15 @@ namespace TorrentUploader {
         internal static string IncorrectUserNameOrPassword {
             get {
                 return ResourceManager.GetString("IncorrectUserNameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must supply path to a torrent file on this system or a magnet link URL..
+        /// </summary>
+        internal static string InsufficientArguments {
+            get {
+                return ResourceManager.GetString("InsufficientArguments", resourceCulture);
             }
         }
         

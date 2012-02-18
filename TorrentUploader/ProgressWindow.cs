@@ -116,6 +116,10 @@ namespace TorrentUploader
                 {
                     this.doneLabel.Text = string.Format("{0}\n{1}", Strings.ErrorHeader, Strings.NoResponse);
                 }
+                else if (e.Error is FileNotFoundException)
+                {
+                    this.doneLabel.Text = string.Format("{0}\n{1}", Strings.ErrorHeader, Strings.FileNotFound);
+                }
                 else
                 {
                     this.doneLabel.Text = e.Error.ToString();
