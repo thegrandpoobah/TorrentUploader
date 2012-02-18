@@ -99,11 +99,15 @@ namespace TorrentUploader
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            bool allowClose = true;
+
             this.progressBar.Style = ProgressBarStyle.Blocks;
             this.progressBar.Value = this.progressBar.Maximum;
 
             if (e.Error != null)
             {
+                allowClose = false;
+
                 if (e.Error is UriFormatException)
                 {
                     this.doneLabel.Text = string.Format("{0}\n{1}", Strings.ErrorHeader, Strings.IncorrectServerAddressFormat);
@@ -127,12 +131,9 @@ namespace TorrentUploader
             }
             else if (e.Cancelled)
             {
-                this.doneLabel.Text = Strings.UploadCancelled;
-            }
+                allowClose = false;
 
-            if (Properties.Settings.Default.FlashWindowOnComplete)
-            {
-                this.Flash();
+                this.doneLabel.Text = Strings.UploadCancelled;
             }
 
             this.workingPanel.Visible = false;
@@ -141,6 +142,15 @@ namespace TorrentUploader
             if (!this.IsMagnetLink)
             {
                 File.Delete(this.TorrentURI);
+            }
+
+            if (Properties.Settings.Default.FlashWindowOnComplete)
+            {
+                this.Flash();
+            }
+            if (Properties.Settings.Default.CloseWindowOnComplete && allowClose)
+            {
+                this.Close();
             }
         }
 

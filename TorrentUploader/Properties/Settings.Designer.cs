@@ -58,5 +58,14 @@ namespace TorrentUploader.Properties {
                 return ((bool)(this["FlashWindowOnComplete"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CloseWindowOnComplete {
+            get {
+                return ((bool)(this["CloseWindowOnComplete"]));
+            }
+        }
     }
 }
