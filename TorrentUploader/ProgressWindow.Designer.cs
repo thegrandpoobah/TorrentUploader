@@ -35,9 +35,9 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.donePanel = new System.Windows.Forms.Panel();
-            this.doneLabel = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.serverUrl = new System.Windows.Forms.LinkLabel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.doneLabel = new System.Windows.Forms.Label();
             this.workingPanel.SuspendLayout();
             this.donePanel.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             // 
             // backgroundWorker
             // 
+            this.backgroundWorker.WorkerSupportsCancellation = true;
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
@@ -98,14 +99,16 @@
             this.donePanel.TabIndex = 1;
             this.donePanel.Visible = false;
             // 
-            // doneLabel
+            // serverUrl
             // 
-            this.doneLabel.Location = new System.Drawing.Point(23, 12);
-            this.doneLabel.Name = "doneLabel";
-            this.doneLabel.Size = new System.Drawing.Size(418, 26);
-            this.doneLabel.TabIndex = 0;
-            this.doneLabel.Text = "Torrent has been uploaded to server. You can view the download progress using the" +
-                " following URL:";
+            this.serverUrl.AutoSize = true;
+            this.serverUrl.Location = new System.Drawing.Point(23, 51);
+            this.serverUrl.Name = "serverUrl";
+            this.serverUrl.Size = new System.Drawing.Size(49, 13);
+            this.serverUrl.TabIndex = 2;
+            this.serverUrl.TabStop = true;
+            this.serverUrl.Text = "serverUrl";
+            this.serverUrl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.serverUrl_LinkClicked);
             // 
             // btnClose
             // 
@@ -117,16 +120,14 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // serverUrl
+            // doneLabel
             // 
-            this.serverUrl.AutoSize = true;
-            this.serverUrl.Location = new System.Drawing.Point(23, 51);
-            this.serverUrl.Name = "serverUrl";
-            this.serverUrl.Size = new System.Drawing.Size(49, 13);
-            this.serverUrl.TabIndex = 2;
-            this.serverUrl.TabStop = true;
-            this.serverUrl.Text = "serverUrl";
-            this.serverUrl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.serverUrl_LinkClicked);
+            this.doneLabel.Location = new System.Drawing.Point(23, 12);
+            this.doneLabel.Name = "doneLabel";
+            this.doneLabel.Size = new System.Drawing.Size(418, 26);
+            this.doneLabel.TabIndex = 0;
+            this.doneLabel.Text = "Torrent has been uploaded to server. You can view the download progress using the" +
+    " following URL:";
             // 
             // ProgressWindow
             // 
