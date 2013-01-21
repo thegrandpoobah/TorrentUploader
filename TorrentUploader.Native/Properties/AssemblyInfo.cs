@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sahab Yazdani")]
 [assembly: AssemblyProduct("TorrentUploader.Native")]
-[assembly: AssemblyCopyright("Copyright © Sahab Yazdani 2012")]
+[assembly: AssemblyCopyright("Copyright © Sahab Yazdani 2012-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
