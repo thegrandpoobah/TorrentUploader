@@ -34,7 +34,7 @@ namespace Cleverscape.UTorrentClient.WebClient
             {
                 if (TorrentArray.Length == 0)
                 {
-                    throw new FormatException("The array of torrent data was not in the expected format.");
+                    throw new FormatException("The array of torrent data was not in the expected format, it contains 0 elements.");
                 }
                 ListOfHashes.Add(TorrentArray[0]);
                 Torrent NewTorrent = GetByHashCode(TorrentArray[0]);
@@ -65,7 +65,8 @@ namespace Cleverscape.UTorrentClient.WebClient
         {
             if (RemovedTorrentsToParse == null || ChangedTorrentsToParse == null)
             {
-                Parse(TorrentsToParse, false);
+                if(TorrentsToParse != null)
+                    Parse(TorrentsToParse, false);
             }
             else
             {
@@ -74,7 +75,7 @@ namespace Cleverscape.UTorrentClient.WebClient
                 {
                     if (TorrentArray.Length == 0)
                     {
-                        throw new FormatException("The array of torrent data was not in the expected format.");
+                        throw new FormatException("The array of torrent data was not in the expected format, it contains 0 elements.");
                     }
                     RemovedTorrents.Clear();
                     RemovedTorrents.AddRange(RemoveByHashCode(TorrentArray[0]));
@@ -87,7 +88,7 @@ namespace Cleverscape.UTorrentClient.WebClient
                 {
                     if (TorrentArray.Length == 0)
                     {
-                        throw new FormatException("The array of torrent data was not in the expected format.");
+                        throw new FormatException("The array of torrent data was not in the expected format, it contains 0 elements.");
                     }
                     Torrent NewTorrent = GetByHashCode(TorrentArray[0]);
                     if (NewTorrent == null)

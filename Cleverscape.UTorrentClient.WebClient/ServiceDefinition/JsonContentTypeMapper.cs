@@ -15,10 +15,14 @@ namespace Cleverscape.UTorrentClient.WebClient.ServiceDefinition
             {
                 return WebContentFormat.Json;
             }
-            else
-            {
-                return WebContentFormat.Default;
-            }
+			else if (contentType.ToLower() == "text/html")
+			{
+				return WebContentFormat.Raw;
+			}
+			else
+			{
+				return WebContentFormat.Default;
+			}
         }
     }
 }

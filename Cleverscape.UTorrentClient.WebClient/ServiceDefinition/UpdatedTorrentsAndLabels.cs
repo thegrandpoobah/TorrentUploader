@@ -21,10 +21,10 @@ namespace Cleverscape.UTorrentClient.WebClient.ServiceDefinition
         [DataMember(Name = "torrentm", Order = 4)]
         public RemovedTorrentsList RemovedTorrents { get; set; }
 
-        [DataMember(Name = "torrents", Order = 5)]
-        public TorrentsList Torrents { get; set; }
+        /*[DataMember(Name = "torrents", Order = 5)]
+        public TorrentsList Torrents { get; set; }*/
 
-        [DataMember(Name = "torrentc", Order = 6)]
+        [DataMember(Name = "torrentc", Order = 5)]
         public string CacheID { get; set; }
     }
 

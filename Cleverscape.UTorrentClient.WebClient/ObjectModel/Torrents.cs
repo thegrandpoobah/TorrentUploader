@@ -63,9 +63,9 @@ namespace Cleverscape.UTorrentClient.WebClient
             bool CallStopped = false;
             bool CallPaused = false;
             bool CallUnPaused = false;
-            if (InputValues.Length != 19)
+            if (InputValues.Length < 19)
             {
-                throw new FormatException("The array of torrent data was not in the expected format.");
+                throw new FormatException("The array of torrent data was not in the expected format, it contains less than 19 elements.");
             }
             if (Hash != InputValues[0])
             {
@@ -818,6 +818,15 @@ namespace Cleverscape.UTorrentClient.WebClient
             }
         }
 
+		public string Magnet
+		{
+			get
+			{
+				// Does not return the correct btih hash
+				return "magnet:?xl=" + this._sizeTotalBytes + "&xt=urn:btih:" +  this.Hash;
+			}
+		}
+
         #endregion
 
         #region Public Properties (Collections)
@@ -885,6 +894,15 @@ namespace Cleverscape.UTorrentClient.WebClient
         public void ReCheck()
         {
             ParentCollection.ParentClient.TorrentReCheck(this);
+        }
+
+        /// <summary>
+        /// Sets the label of this torrent.
+        /// </summary>
+        /// <param name="NewLabel">The new label of this torrent.</param>
+        public void SetLabel(string NewLabel)
+        {
+            ParentCollection.ParentClient.SetTorrentProperty(this, "label", NewLabel);
         }
 
         /// <summary>

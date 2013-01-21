@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using Cleverscape.UTorrentClient.WebClient.ServiceDefinition;
+using System.Windows.Threading;
 
 namespace Cleverscape.UTorrentClient.WebClient
 {
@@ -63,14 +65,17 @@ namespace Cleverscape.UTorrentClient.WebClient
     /// <summary>
     /// Represents a collection of torrent labels
     /// </summary>
-    public class TorrentLabelCollection : IEnumerable<TorrentLabel>
+    public class TorrentLabelCollection : IEnumerable<TorrentLabel>, INotifyCollectionChanged
     {
         private List<TorrentLabel> _torrentLabelCollectionInternal;
 
+        internal UTorrentWebClient ParentClient { get; private set; }
+
         #region Constructor and parsing data from Web UI
 
-        internal TorrentLabelCollection()
+        internal TorrentLabelCollection(UTorrentWebClient ParentClient)
         {
+            this.ParentClient = ParentClient;
             _torrentLabelCollectionInternal = new List<TorrentLabel>();
         }
 
@@ -89,6 +94,7 @@ namespace Cleverscape.UTorrentClient.WebClient
                 {
                     NewTorrentLabel = new TorrentLabel(LabelArray);
                     _torrentLabelCollectionInternal.Add(NewTorrentLabel);
+                    CallCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, NewTorrentLabel));
                 }
                 else
                 {
@@ -115,6 +121,7 @@ namespace Cleverscape.UTorrentClient.WebClient
             foreach (TorrentLabel TorrentLabelToRemove in TorrentLabelsToRemove)
             {
                 _torrentLabelCollectionInternal.Remove(TorrentLabelToRemove);
+                CallCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, TorrentLabelToRemove));
             }
         }
 
@@ -131,8 +138,31 @@ namespace Cleverscape.UTorrentClient.WebClient
             foreach (TorrentLabel TorrentLabelToRemove in TorrentLabelsToRemove)
             {
                 _torrentLabelCollectionInternal.Remove(TorrentLabelToRemove);
+                CallCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, TorrentLabelToRemove));
             }
         }
+
+        private void CallCollectionChanged(NotifyCollectionChangedEventArgs EventArgs)
+        {
+            if(CollectionChanged != null)
+            {
+                if(ParentClient.Dispatcher == null || ParentClient.Dispatcher.CheckAccess())
+                {
+                    CollectionChanged(this, EventArgs);
+                }
+                else
+                {
+                    ParentClient.Dispatcher.BeginInvoke(new CallCollectionChangedAsyncCallback(CallCollectionChangedAsync), DispatcherPriority.Loaded, new object[] { EventArgs });
+                }
+            }
+        }
+
+        private void CallCollectionChangedAsync(NotifyCollectionChangedEventArgs EventArgs)
+        {
+            CollectionChanged(this, EventArgs);
+        }
+
+        private delegate void CallCollectionChangedAsyncCallback(NotifyCollectionChangedEventArgs EventArgs);
 
         #endregion
 
@@ -197,6 +227,8 @@ namespace Cleverscape.UTorrentClient.WebClient
         {
             return _torrentLabelCollectionInternal.GetEnumerator();
         }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         #endregion
     }

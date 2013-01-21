@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Cleverscape.UTorrentClient.WebClient
 {
-    internal static class Utilities
+    public static class Utilities
     {
-        internal static string FormatFileSize(long SizeBytes)
+        public static string FormatFileSize(long SizeBytes)
         {
             return FormatFileSize(SizeBytes, FileSizeFormat.SizeBytes);
         }
 
-        internal static string FormatFileSize(long SizeBytes, FileSizeFormat Format)
+        public static string FormatFileSize(long SizeBytes, FileSizeFormat Format)
         {
             string Suffix = "";
             string SuffixSingular = "";
@@ -77,7 +77,7 @@ namespace Cleverscape.UTorrentClient.WebClient
             }
         }
 
-        internal enum FileSizeFormat
+        public enum FileSizeFormat
         {
             SizeBytes,
             SizeBits,
