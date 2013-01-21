@@ -46,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E02A62CFC10245A2A64FAA24F9E382D4"
+        "OwnerKey" = "8:_BDA0E1E8E967B9E27E57387B6AA0A255"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BDA0E1E8E967B9E27E57387B6AA0A255"
+        "OwnerKey" = "8:_E02A62CFC10245A2A64FAA24F9E382D4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -125,10 +125,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Client.3.5"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    "Name" = "8:.NET Framework 3.5 SP1 Client Profile"
+                    "ProductCode" = "8:Microsoft.Net.Client.3.5"
                     }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
                     {
@@ -187,11 +187,6 @@
             "AssemblyAsmDisplayName" = "8:TorrentUploader.Native, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6873C0A4D19DACD4A6D6C57AE98C5EF2"
-                    {
-                    "Name" = "8:TorrentUploader.Native.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:TorrentUploader.Native.dll"
             "TargetName" = "8:"
@@ -218,11 +213,6 @@
             "AssemblyAsmDisplayName" = "8:Cleverscape.UTorrentClient.WebClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BDA0E1E8E967B9E27E57387B6AA0A255"
-                    {
-                    "Name" = "8:Cleverscape.UTorrentClient.WebClient.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Cleverscape.UTorrentClient.WebClient.dll"
             "TargetName" = "8:"
@@ -1179,7 +1169,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_033BB36E3B914F9399F9F01CD0315369"
             {
-            "SourcePath" = "8:..\\TorrentUploader\\obj\\x86\\Release\\TorrentUploader.exe"
+            "SourcePath" = "8:..\\TorrentUploader\\obj\\x86\\Debug\\TorrentUploader.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EF72F16729E543C8ABF5182099250A1F"
@@ -1207,7 +1197,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E02A62CFC10245A2A64FAA24F9E382D4"
             {
-            "SourcePath" = "8:..\\TorrentUploader.CustomActions\\obj\\x86\\Release\\TorrentUploader.CustomActions.dll"
+            "SourcePath" = "8:..\\TorrentUploader.CustomActions\\obj\\x86\\Debug\\TorrentUploader.CustomActions.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EF72F16729E543C8ABF5182099250A1F"
